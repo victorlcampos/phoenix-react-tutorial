@@ -11,4 +11,4 @@ let Comment = React.createClass({
   }
 });
 
-export default Comment
+export default Comment;

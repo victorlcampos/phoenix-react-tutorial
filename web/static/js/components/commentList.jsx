@@ -11,4 +11,4 @@ let CommentList = React.createClass({
   }
 });
 
-export default CommentList
+export default CommentList;

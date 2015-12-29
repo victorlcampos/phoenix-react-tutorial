@@ -8,4 +8,4 @@ let CommentForm = React.createClass({
   }
 });
 
-export default CommentForm
+export default CommentForm;

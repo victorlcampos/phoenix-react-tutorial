@@ -13,4 +13,4 @@ var CommentBox = React.createClass({
   }
 });
 
-export default CommentBox
+export default CommentBox;
