@@ -1,9 +1,15 @@
 import CommentList from './commentList'
 import CommentForm from './commentForm'
+import Comment from '../services/comment'
 
 var CommentBox = React.createClass({
   getInitialState: function() {
-    return {data: [{id: 1, author: "Pete Hunt", text: "This is one comment"},{id: 2, author: "Jordan Walke", text: "This is *another* comment"}]};
+    return {data: []};
+  },
+  componentDidMount: function() {
+    this.setState({data: Comment.all()});
+
+    Comment.notifyNew(this);
   },
   render: function() {
     return (
