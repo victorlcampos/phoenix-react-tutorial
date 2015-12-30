@@ -3,6 +3,7 @@ defmodule PhoenixReact.UserSocket do
 
   ## Channels
   # channel "rooms:*", PhoenixReact.RoomChannel
+  channel "comments:*", PhoenixReact.CommentChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket
