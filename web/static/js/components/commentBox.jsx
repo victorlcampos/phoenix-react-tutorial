@@ -7,13 +7,16 @@ var CommentBox = React.createClass({
     return {data: []};
   },
   componentDidMount: function() {
-    this.setState({data: Comment.all()});
-
+    Comment.all(this);
     Comment.notifyNew(this);
   },
-  updateFunction: function(action, comment) {
-    this.state.data.push(comment);
-    this.setState({data: this.state.data});
+  updateFunction: function(action, comments) {
+    if (comments.length) {
+      this.setState({data: comments});
+    } else {
+      this.state.data.push(comments);
+      this.setState({data: this.state.data});
+    }
   },
   render: function() {
     return (

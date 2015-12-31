@@ -19,8 +19,8 @@ defmodule PhoenixReact.Router do
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", PhoenixReact do
-  #   pipe_through :api
-  # end
+  scope "/api/v1", PhoenixReact do
+    pipe_through :api
+    resources "/comments", CommentController, only: [:index]
+  end
 end
