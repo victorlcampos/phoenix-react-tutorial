@@ -11,7 +11,7 @@ var CommentBox = React.createClass({
     Comment.notifyNew(this);
   },
   updateFunction: function(action, comments) {
-    if (comments.length) {
+    if (comments.length !== undefined) {
       this.setState({data: comments});
     } else {
       this.state.data.push(comments);
