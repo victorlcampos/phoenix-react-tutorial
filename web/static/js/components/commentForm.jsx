@@ -13,7 +13,7 @@ let CommentForm = React.createClass({
   handleSubmit: function(e) {
     e.preventDefault();
     Comment.pushNew(this.state);
-    this.setState({author: '', text: '', id: Date.now()})
+    this.setState({text: '', id: Date.now()})
   },
   render: function() {
     return (
