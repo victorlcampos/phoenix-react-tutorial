@@ -11,6 +11,10 @@ var CommentBox = React.createClass({
 
     Comment.notifyNew(this);
   },
+  updateFunction: function(action, comment) {
+    this.state.data.push(comment);
+    this.setState({data: this.state.data});
+  },
   render: function() {
     return (
       <div className="commentBox">

@@ -1,6 +1,5 @@
 defmodule PhoenixReact.CommentChannel do
   use PhoenixReact.Web, :channel
-
   def join("comments:lobby", payload, socket) do
     if authorized?(payload) do
       {:ok, socket}
@@ -11,7 +10,8 @@ defmodule PhoenixReact.CommentChannel do
 
   # Channels can be used in a request/response fashion
   # by sending replies to requests from the client
-  def handle_in("ping", payload, socket) do
+  def handle_in("new:comment", payload, socket) do
+    broadcast! socket, "new:comment", payload
     {:reply, {:ok, payload}, socket}
   end
 
